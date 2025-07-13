@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rhythm Machine</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">RHYTHM MACHINE</h1>
+            <p class="subtitle">AI-POWERED • MODEL 002</p>
+        </div>
+
+        <div class="input-section">
+            <div class="input-container">
+                <input type="text" class="text-input" placeholder="Describe your beat (e.g. 'minimal techno', 'trap drums', 'vintage funk')">
+                <button class="generate-btn">Generate</button>
+            </div>
+            
+            <div class="try-section">
+                <div class="try-label">TRY THESE:</div>
+                <div class="try-buttons">
+                    <button class="try-btn">808 Cowbell</button>
+                    <button class="try-btn">Glitch</button>
+                    <button class="try-btn">Jazz Fusion</button>
+                    <button class="try-btn">Afrobeat</button>
+                    <button class="try-btn">Lo-Fi</button>
+                    <button class="try-btn">Stadium Rock</button>
+                    <button class="try-btn">Ambient</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <div class="control-buttons">
+                <button class="control-btn play-btn">Play</button>
+                <button class="control-btn stop-btn">Stop</button>
+                <button class="control-btn clear-btn">Clear</button>
+            </div>
+            
+            <div class="tempo-section">
+                <span class="tempo-label">TEMPO</span>
+                <input type="range" class="tempo-slider" min="60" max="180" value="120">
+                <span class="tempo-value">120 BPM</span>
+            </div>
+        </div>
+
+        <div class="sequencer">
+            <div class="sequencer-row">
+                <div class="instrument-label">KICK</div>
+                <div class="steps">
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                </div>
+            </div>
+            
+            <div class="sequencer-row">
+                <div class="instrument-label">SNARE</div>
+                <div class="steps">
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                </div>
+            </div>
+            
+            <div class="sequencer-row">
+                <div class="instrument-label">HIHAT</div>
+                <div class="steps">
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                </div>
+            </div>
+            
+            <div class="sequencer-row">
+                <div class="instrument-label">OPENHAT</div>
+                <div class="steps">
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                </div>
+            </div>
+            
+            <div class="sequencer-row">
+                <div class="instrument-label">CLAP</div>
+                <div class="steps">
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                    <div class="step"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="genres">
+            <button class="genre-btn active">TECHNO</button>
+            <button class="genre-btn">HOUSE</button>
+            <button class="genre-btn">TRAP</button>
+            <button class="genre-btn">BREAKBEAT</button>
+            <button class="genre-btn">MINIMAL</button>
+        </div>
+    </div>
+
+    <script>
+        // Add interactivity
+        document.addEventListener('DOMContentLoaded', function() {
+            // Handle step clicks
+            const steps = document.querySelectorAll('.step');
+            steps.forEach(step => {
+                step.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                });
+            });
+
+            // Handle genre button clicks
+            const genreButtons = document.querySelectorAll('.genre-btn');
+            genreButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    genreButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            // Handle try these buttons
+            const tryButtons = document.querySelectorAll('.try-btn');
+            const textInput = document.querySelector('.text-input');
+            tryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    textInput.value = this.textContent;
+                });
+            });
+
+            // Handle tempo slider
+            const tempoSlider = document.querySelector('.tempo-slider');
+            const tempoValue = document.querySelector('.tempo-value');
+            tempoSlider.addEventListener('input', function() {
+                tempoValue.textContent = this.value + ' BPM';
+            });
+        });
+    </script>
+</body>
+</html>
